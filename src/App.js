@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
+import './App.css';
 
 const todos = [
   {
@@ -25,8 +26,8 @@ class App extends React.Component {
       TodoListonState: todos,
       todo:{
       task: '',
-      id: '',
-      complete: '',
+      id: Date.now(),
+      completed: false,
       }
     }
 
@@ -51,23 +52,45 @@ addTodo = event => {
     todo:{
       task: '',
       id: Date.now(),
-      complete: 'false',
+      completed: false,
     }
   })
 }
 
+toggleCompleted = id => {
+  this.setState({
+    TodoListonState: this.state.TodoListonState.map(item => 
+      (item.id === id ? {...item, completed: !item.completed} : item)  )
+  });
+  console.log(this.state.TodoListonState)
+};
+
+
+
+
+clearCompleted = event => {
+  event.preventDefault();
+  this.setState({
+    TodoListonState: this.state.TodoListonState.filter(
+      item => !item.completed)
+  })
+};
+
   render() {
     return (
       <div className = "TodoContainer">
-        <h2>Welcome to your Todo App!</h2>
+        <h2>To Do List:</h2>
         <div className = "Todo">
-        <TodoList listProp ={this.state.TodoListonState} />
+        <TodoList list ={this.state.TodoListonState}
+        toggleCompleted = {this.toggleCompleted} />
         <TodoForm 
-        nameholder = {this.state.todo} 
+        form = {this.state.todo} 
         addTodo = {this.addTodo}
         handleChanges = {this.handleChanges}
         />
+        <button className= "clearbtn" onClick={this.clearCompleted}>Clear Done</button>
         </div>
+        
       </div>
     );
   }

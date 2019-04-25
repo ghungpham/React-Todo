@@ -50,7 +50,7 @@ addTodo = event => {
     TodoListonState: [...this.state.TodoListonState, this.state.todo],
     todo:{
       task: '',
-      id: '',
+      id: Date.now(),
       complete: 'false',
     }
   })

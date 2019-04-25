@@ -33,9 +33,9 @@ class App extends React.Component {
   }
 
 handleChanges = event => { 
-  console.log(event.target.name);
+  console.log(event.target.name)
   this.setState({
-    newtodo: {
+    todo: {
       ...this.state.todo,
       [event.target.name] : event.target.value
     }
@@ -47,8 +47,8 @@ handleChanges = event => {
 addTodo = event => {
   event.preventDefault();
   this.setState({
-    TodoListonState: [...this.state.TodoListonState, this.state.newtodo],
-    todo: {
+    TodoListonState: [...this.state.TodoListonState, this.state.todo],
+    todo:{
       task: '',
       id: '',
       complete: 'false',
@@ -63,8 +63,7 @@ addTodo = event => {
         <div className = "Todo">
         <TodoList listProp ={this.state.TodoListonState} />
         <TodoForm 
-
-        value = {this.state.task} 
+        nameholder = {this.state.todo} 
         addTodo = {this.addTodo}
         handleChanges = {this.handleChanges}
         />

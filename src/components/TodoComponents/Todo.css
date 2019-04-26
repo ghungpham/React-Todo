@@ -1,0 +1,7 @@
+.todo{
+    line-height: 1.5;
+}
+.todocompleted {
+    text-decoration: line-through;
+
+}

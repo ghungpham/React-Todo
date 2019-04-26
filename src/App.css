@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.TodoContainer{
+    width: 400px;
+    background-color: rgb(238, 238, 238);
+    margin: 0 auto;
+    padding: 30px 30px; 
+    border: 2px solid darkgray;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.TodoContainer h2{
+    color: darkgreen;
+}
+
+.TodoContainer .Todo{
+    border: 1px dashed lightblue;
+    padding: 20px 20px;}
+
+.TodoContainer .Todo:hover {
+        cursor: pointer;
+    }
+
+form > input {
+    background-color: lightgray;
+    border: 0;
+    padding: 6px 6px;
+    width: 240px;
+    height: 15px;
+    outline: 0;
+    color: black;
+    border-bottom: 1px solid darkgray;
+    margin-right: 8px;
+  }
+.Todo .Add{
+    border: 2px solid maroon;
+    color: maroon;
+    padding: 6px 14px;
+    border-radius: 5px;
+  }
+.Todo .clearbtn{
+    width: 200px;
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-left: 50px;
+    border: 1px solid navy;
+    color: navy;
+    border-radius: 5px;
+
+}
